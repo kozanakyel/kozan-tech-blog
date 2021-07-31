@@ -1,0 +1,14 @@
+1-add a blog with images-heading subheading category for each blog
+2-homepage last blogs showed
+3-cv page intr certificate projects links and updatable process
+4-messages from any person
+5-normalization database
+6-pagination for blogs
+7-unath some pages
+8-proces.ENV for database connection
+9-github setup
+10-science, programming, webdevelopment, cryptocurrency and blockchain
+11-sql injection
+12-google payment for contribution
+13-blog(header- category- subheadingforshort definition)
+14-
