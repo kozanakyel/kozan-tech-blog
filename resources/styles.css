@@ -12,8 +12,12 @@ html, body{
   color:white;
 }
 
-a:hover{
+a{
   color:red;
+}
+
+a:hover{
+  color:#FF6347;
 }
 /**Header for website*/
 .brand{
@@ -143,6 +147,11 @@ i, span{
 /**Main body*/
 .main-body{
   margin: 3%;
+  text-align:center;
+}
+
+img{
+  filter:grayscale(100%);
 }
 
 /*category selection*/
@@ -163,9 +172,111 @@ input[type=submit] {
 input[type=submit]:hover{
   background: #DAA520;
 }
-
-
 hr{
   color:white;
   margin: 15px;
+}
+
+/**Card for article*/
+.container-card{
+  padding: 2px;
+  background: gray;
+  width: 250px;
+  margin:3px;
+  margin-top: 10px;
+  border-radius: 4px;
+  box-shadow: 0px 5px 15px rgba;
+  display: inline-block;
+}
+.img-container-card img{
+  width: 100%;
+  height: 100%;
+  border-radius: 4px 4px 0px 0px;
+}
+.content-container-card{
+  padding: 10px 20px;
+}
+.h1-card{
+  font-size:24px;
+}
+.h2-card{
+background: #FFD700;
+width: 80px;
+font-size: 8px;
+padding: 5px;
+color: black;
+text-align: center;
+letter-spacing: 0.08rem;
+text-transform: uppercase;
+font-weight: 700;
+}
+.p-card{
+color: grey;
+font-weight: 700;
+font-size: 12px;
+letter-spacing: 0.02rem;
+line-height: 1.3rem;
+margin-bottom: 5px;
+}
+
+/**contact page*/
+.contact {
+  border-radius: 5px;
+  padding: 20px;
+}
+
+input[type=text], input[type=email], textarea {
+  width: 100%; /* Full width */
+  padding: 12px;
+  border:none; /* Some padding */
+  border-bottom: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box;
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical;
+  color: white;
+}
+
+/**blog page*/
+.blog{
+  width: 100%;
+  text-align:center;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/**resume page*/
+.education-img{
+  display: inline-flex;
+  align-items: center;
+}
+.img-resume{
+  margin-right: 20px;
+}
+.img-resume img{
+  border-radius: 25px;
+}
+
+/*Admin page*/
+.admin-body{
+  display: inline-flex;
+}
+.side-bar{
+  width: 20%;
+  min-width: 150px;
+  padding: 20px;
+  display: block;
+}
+.side-bar .item-admin{
+  margin: 10px;
+  margin-bottom: 15px;
+}
+.side-bar a{
+  text-decoration: none;
+  color:#FFD700;
+  font-weight: bold;
+}
+.page-content{
+  width: 80%;
 }
