@@ -13,7 +13,7 @@
 <body>
   <div class="nav">
     <div class="brand">
-      KOZANAKYEL TECH
+      KOZANAKYEL
       <a href="goat_phoneix.php"><i style="background:black;" class="fas fa-dragon fa-2x"></i></a>
     </div>
     <label id="hamburger" for="toggle">  &#9776; </label>

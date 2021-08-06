@@ -298,12 +298,12 @@ table, th, td {
   border: 1px solid goldenrod;
 }
 
-#newblog{
+.blog-list{
   justify-content: center;
   text-align: center;
   align-items: center;
 }
 
-#newblog input{
+.blog-list input{
   width: 100%;
 }

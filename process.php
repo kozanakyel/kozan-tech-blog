@@ -60,14 +60,12 @@ if (isset($_POST["chosen_msg_read"])) {
 
 //Add a New Blogs
 if (isset($_POST["addblog"])) {
-echo  $title = $_POST["title"];
-echo   $short_inf = $_POST["short_inf"];
-  echo $category = $_POST["category"];
-  echo $head_img = $_POST["head_img"];
-  echo $author = $_POST["author"];
-  echo $blog_content = $_POST["blog_content"];
-
-
+  $title = $_POST["title"];
+  $short_inf = $_POST["short_inf"];
+  $category = $_POST["category"];
+  $head_img = $_POST["head_img"];
+  $author = $_POST["author"];
+  $blog_content = $_POST["blog_content"];
 
   $blog_task = $conn->prepare("INSERT INTO blog SET
             title = ?,
@@ -84,6 +82,29 @@ echo   $short_inf = $_POST["short_inf"];
     exit;
   }else {
     header("Location:index.php?status=failed_insert_blog");
+    exit;
+  }
+}
+
+//update_p_blog
+if (isset($_POST["updateblog"])) {
+  echo $_POST["uid"];
+  $update_b = $conn->prepare("UPDATE blog SET
+                title=?,
+                short_desc=?,
+                header_img=?,
+                category=?,
+                author=?,
+                content=?
+                WHERE id=?");
+  $update_blog = $update_b->execute(array(
+    $_POST["utitle"], $_POST["ushort_inf"],$_POST["uhead_img"],$_POST["ucategory"],$_POST["uauthor"],$_POST["blog_content_update"],$_POST["uid"]
+  ));
+  if ($update_blog) {
+    header("Location:admin.php?status=update_blog");
+    exit;
+  }else {
+    header("Location:admin.php?status=failed_update_blog");
     exit;
   }
 }
