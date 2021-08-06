@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@200&display=swap');
 *{
   background: #191919;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Hahmlet', serif;
 }
 
 html, body{
@@ -14,6 +14,7 @@ html, body{
 
 a{
   color:red;
+  text-decoration: none;
 }
 
 a:hover{
@@ -124,9 +125,11 @@ a:hover{
 
 i, span{
   background: black;
+  text-decoration: none;
 }
 
 .f-right a{
+  text-decoration: none;
   margin: 3px;
 }
 .phone, .place, .email{
@@ -178,6 +181,7 @@ hr{
 }
 
 /**Card for article*/
+
 .container-card{
   padding: 2px;
   background: gray;
@@ -223,15 +227,16 @@ margin-bottom: 5px;
 .contact {
   border-radius: 5px;
   padding: 20px;
+  display: inline-block;
 }
 
-input[type=text], input[type=email], textarea {
-  width: 100%; /* Full width */
+input[type=text], input[type=email],input[type=password], textarea {
+  /* Full width */
   padding: 12px;
   border:none; /* Some padding */
   border-bottom: 1px solid #ccc; /* Gray border */
   border-radius: 4px; /* Rounded borders */
-  box-sizing: border-box;
+  display: block;
   margin-top: 6px; /* Add a top margin */
   margin-bottom: 16px; /* Bottom margin */
   resize: vertical;
@@ -267,6 +272,8 @@ input[type=text], input[type=email], textarea {
   min-width: 150px;
   padding: 20px;
   display: block;
+  border-right: 1px solid red;
+  margin-right: 5px;
 }
 .side-bar .item-admin{
   margin: 10px;

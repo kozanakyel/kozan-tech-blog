@@ -1,27 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" type="text/css" href="resources/styles.css">
-    <script src="https://kit.fontawesome.com/f85b28bbc8.js" crossorigin="anonymous"></script>
-  <title>Kozan Akyel Technology</title>
-</head>
-<body>
-  <div class="nav">
-    <div class="brand">
-      KOZANAKYEL TECH
-      <a href="#"><i style="background:black;" class="fas fa-dragon fa-2x"></i></a>
-    </div>
-    <label id="hamburger" for="toggle">  &#9776; </label>
-    <input type="checkbox" id="toggle"/>
-    <div class="menu">
-      <a href="index.html">Home</a>
-      <a href="#">CV/Resume</a>
-      <a href="#">About</a>
-    </div>
-  </div>
+<?php require 'views/header.php';?>
 
 <div class="main-body">
 
@@ -87,35 +64,4 @@
 </div>
 
 
-  <div class="footer">
-    <div class="f-left box">
-      <div class="place">
-        <span class="fas fa-map-marker-alt"></span>
-        <span class="text">Antalya, Turkey</span>
-      </div>
-      <div class="phone">
-        <span class="fas fa-phone-alt"></span>
-        <span class="text">+0905067003147</span>
-      </div>
-      <div class="email">
-        <span class="fas fa-envelope"></span>
-        <span class="text">kozanakyel@gmail.com</span>
-      </div>
-    </div>
-    <div class="f-center box">
-      <p style="background:black;">copyright@ kozanakyel 2021</p>
-    </div>
-    <div class="f-right box">
-      <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
-      <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
-      <a href="#"><i class="fab fa-github fa-2x"></i></a>
-      <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
-      <a href="#"><i class="fab fa-linkedin-in fa-2x"></i></a>
-    </div>
-  </div>
-
-
-<script type="text/javascript" src="resources/implement.js">
-</script>
-</body>
-</html>
+  <?php require 'views/footer.php';?>
