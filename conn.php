@@ -15,7 +15,7 @@ $dbpass = $_ENV["DB_PASSWORD"];
 try{
   $conn = new PDO("mysql:host=". $dbhost .";dbname=". $dbname .";charset=utf8", $dbuser, $dbpass);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  echo "Connection succesfully";
+  //echo "Connection succesfully";
 }catch(PDOException $e){
   echo "Connection Failed: " . $e->getMessage();
 }
