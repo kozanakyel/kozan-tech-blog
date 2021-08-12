@@ -1,7 +1,30 @@
 
 
 <?php
+ob_start();
+session_start();
 include 'conn.php';
+
+//login dragon
+if (isset($_POST["go_dragon"])) {
+  $dragon = md5($_POST["password"]);
+
+  $user_task = $conn->prepare("SELECT * FROM user
+                WHERE password= ?");
+  $user_task->execute(array(
+    $dragon
+  ));
+  echo $affected=$user_task->rowCount();
+  $user_fetch = $user_task->fetch(PDO::FETCH_ASSOC);
+  if ($affected == 1) {
+      $_SESSION["dragon_user"] = $user_fetch["email"];
+      header("Location:admin.php?status=success_login");
+      exit;
+  }else {
+    header("Location:goat_phoneix.php?status=failed_login");
+    exit;
+  }
+}
 
 //contact messages insert
 if (isset($_POST['msg_submit'])) {
@@ -78,10 +101,10 @@ if (isset($_POST["addblog"])) {
     $title, $short_inf, $head_img, $category, $blog_content, $author
   ));
   if ($insert_blog) {
-    header("Location:index.php?status=insert_blog");
+    header("Location:admin.php?status=insert_blog");
     exit;
   }else {
-    header("Location:index.php?status=failed_insert_blog");
+    header("Location:admin.php?status=failed_insert_blog");
     exit;
   }
 }
@@ -108,4 +131,5 @@ if (isset($_POST["updateblog"])) {
     exit;
   }
 }
+
 ?>

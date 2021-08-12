@@ -1,4 +1,8 @@
-<?php include 'conn.php';?>
+<?php
+ob_start();
+session_start();
+include 'conn.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +17,8 @@
 <body>
   <div class="nav">
     <div class="brand">
-      KOZANAKYEL
+      <a id="header-brand" href="index.php">KOZANAKYEL</a>
+
       <a href="goat_phoneix.php"><i style="background:black;" class="fas fa-dragon fa-2x"></i></a>
     </div>
     <label id="hamburger" for="toggle">  &#9776; </label>
@@ -22,5 +27,10 @@
       <a href="index.php">Home</a>
       <a href="resume.php">CV/Resume</a>
       <a href="about.php">About</a>
+      <?php
+        if (isset($_SESSION["dragon_user"])) {
+          echo "<a href='admin.php'>Admin</a>";
+        }
+       ?>
     </div>
   </div>

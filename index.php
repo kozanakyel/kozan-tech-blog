@@ -1,77 +1,66 @@
 <?php require 'views/header.php';?>
+<?php
+  $blogs = $conn->prepare("SELECT * FROM blog
+                          ORDER BY time DESC");
+  $blogs->execute();
+  $fetch_blg= $blogs->fetchAll();
+
+  $cat_array = array();
+  foreach ($fetch_blg as $blg) {
+      array_push($cat_array, $blg["category"]);
+  }
+  $cat_array = array_unique($cat_array);
+ ?>
 
   <div class="main-body">
     <div class="categories">
-      <form class="form-category" method="">
-        <input type="submit" name="Science" value="Science" />
-        <input type="submit" name="Programming" value="Programmig" />
-        <input type="submit" name="Biology" value="Biology" />
-        <input type="submit" name="Math" value="Math" />
-        <input type="submit" name="Math" value="Math" />
-        <input type="submit" name="Math" value="Math" />
+      <form class="form-category" action="index.php" method="post">
+        <?php foreach ($cat_array as $cat) { ?>
+          <input type="submit" name="cat" value="<?php echo ucfirst($cat); ?>" />
+      <?php } ?>
       </form>
       <hr>
+
+      <?php
+      $new_blogs = array();
+      if (isset($_POST["cat"])) {
+        foreach ($fetch_blg as $blg) {
+          if (strtolower($_POST["cat"]) == strtolower($blg["category"])) {
+            array_push($new_blogs, $blg);
+          }
+        }
+        $fetch_blg = $new_blogs;
+
+      }
+       ?>
     </div>
     <!--Card for articles -->
-    <h2>Latest 4 Articles</h2>
+    <h2>Latest Articles</h2>
     <div class="container">
-      <div class="container-card">
-        <div class="img-container-card">
-          <img src="image.png">
-        </div>
-        <div class="content-container-card">
-          <h2 class="h2-card">Gaming</h2>
-          <h1 class="h1-card">Future Of Gaming Industry</h1>
-          <p>Loremid dictum odio ultricies.</p>
-          <input type="submit" value="Read More" />
-          <p class="p-card"><br /></p>
-        </div>
+      <div class="list-wrapper">
+        <?php foreach ($fetch_blg as $blg) { ?>
+          <form class="" action="blog.php" method="post">
+            <div class="container-card">
+              <div class="img-container-card">
+                <img src="<?php echo $blg["header_img"] ?>">
+              </div>
+              <div class="content-container-card">
+                <h2 class="h2-card"><?php echo $blg["category"] ?></h2>
+                <h1 class="h1-card"><?php echo $blg["title"] ?></h1>
+                <p><?php echo $blg["short_desc"] ?></p>
+                <input type="hidden" name="blog_id" value="<?php echo $blg["id"] ?>">
+                <input type="submit" name="go_blog" value="Read More" />
+                <p class="p-card"><br /></p>
+              </div>
+            </div>
+          </form>
+      <?php  } ?>
       </div>
 
-      <div class="container-card">
-        <div class="img-container-card">
-          <img src="image.png">
-        </div>
-        <div class="content-container-card">
-          <h2 class="h2-card">Gaming</h2>
-          <h1 class="h1-card">Future Of Gaming Industry</h1>
-          <p>Lorem ipsum dolor sit amet,  id dictum odio ultricies.</p>
-          <input type="submit" value="Read More" />
-          <p class="p-card"><br /></p>
-        </div>
-      </div>
-
-      <div class="container-card">
-        <div class="img-container-card">
-          <img src="image.png">
-        </div>
-        <div class="content-container-card">
-          <h2 class="h2-card">Gaming</h2>
-          <h1 class="h1-card">Future Of Gaming Industry</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu odio ante.
-            Curabitur efficitur ante a ex sagittis, at lobortis quam egestas. Phasellus tempor lorem risus, ut malesuada turpis placerat eget.
-            Nunc eleifend diam blandit sapien congue, id dictum odio ultricies.</p>
-          <input type="submit" value="Read More" />
-          <p class="p-card"><br /></p>
-        </div>
-      </div>
-
-      <div class="container-card">
-        <div class="img-container-card">
-          <img src="image.png">
-        </div>
-        <div class="content-container-card">
-          <h2 class="h2-card">Gaming</h2>
-          <h1 class="h1-card">Future Of Gaming Industry</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu odio ante.
-            Curabitur efficitur ante a ex sagittis, at lobortis quam egestas. Phasellus tempor lorem risus, ut malesuada turpis placerat eget.
-            Nunc eleifend diam blandit sapien congue, id dictum odio ultricies.</p>
-          <input type="submit" value="Read More" />
-          <p class="p-card"><br /></p>
-        </div>
-      </div>
     </div>
+    <div id="pagination-container">
 
+    </div>
 
     <!--Contact me-->
     <?php require 'views/contact.php';?>

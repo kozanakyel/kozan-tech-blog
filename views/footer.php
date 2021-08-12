@@ -17,16 +17,18 @@
     <p style="background:black;">copyright@ kozanakyel 2021</p>
   </div>
   <div class="f-right box">
-    <a href="https://www.instagram.com/kozanakyel/"><i class="fab fa-instagram fa-2x"></i></a>
-    <a href="https://twitter.com/_kozanakyel"><i class="fab fa-twitter fa-2x"></i></a>
-    <a href="https://github.com/kozanakyel"><i class="fab fa-github fa-2x"></i></a>
-    <a href="https://www.youtube.com/channel/UC9-0CflavdbE4yOFseYu3nQ"><i class="fab fa-youtube fa-2x"></i></a>
-    <a href="https://www.linkedin.com/in/u%C4%9Fur-akyel-09a5941a9/"><i class="fab fa-linkedin-in fa-2x"></i></a>
+    <a target="_blank" href="https://www.instagram.com/kozanakyel/"><i class="fab fa-instagram fa-2x"></i></a>
+    <a target="_blank" href="https://twitter.com/_kozanakyel"><i class="fab fa-twitter fa-2x"></i></a>
+    <a target="_blank" href="https://github.com/kozanakyel"><i class="fab fa-github fa-2x"></i></a>
+    <a target="_blank" href="https://www.youtube.com/channel/UC9-0CflavdbE4yOFseYu3nQ"><i class="fab fa-youtube fa-2x"></i></a>
+    <a target="_blank" href="https://www.linkedin.com/in/u%C4%9Fur-akyel-09a5941a9/"><i class="fab fa-linkedin-in fa-2x"></i></a>
   </div>
 </div>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript" src="resources/implement.js">
+
 </script>
+
 </body>
 </html>

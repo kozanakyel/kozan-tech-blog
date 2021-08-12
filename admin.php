@@ -1,7 +1,21 @@
 
 <?php require 'views/header.php';?>
 <?php
-  $messages = $conn->prepare("SELECT * FROM contact_msg");
+  $user_task = $conn->prepare("SELECT * FROM user
+              WHERE email= ?");
+  $user_task->execute(array(
+    $_SESSION["dragon_user"]
+  ));
+  $affected = $user_task->rowCount();
+  $user_fetch = $user_task->fetch(PDO::FETCH_ASSOC);
+
+  if ($affected == 0) {
+    header("Location:goat_phoneix.php?status=unauth");
+    exit;
+  }
+
+  $messages = $conn->prepare("SELECT * FROM contact_msg
+                            ORDER BY time_msg DESC");
   $messages->execute();
   $fetch_msg= $messages->fetchAll();
 
