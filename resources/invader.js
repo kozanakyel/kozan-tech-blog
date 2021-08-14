@@ -93,7 +93,7 @@ function moveInvaders() {
     }
   }
   if (aliensRemoved.length === alienInvaders.length) {
-    resultsDisplay.innerHTML = 'YOU WIN'
+    resultsDisplay.innerHTML = 'YOU WIN MOTHAFUCKA!'
     clearInterval(invadersId)
   }
 }

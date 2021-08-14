@@ -26,6 +26,7 @@ include 'conn.php';
     <div class="menu">
       <a href="index.php">Home</a>
       <a href="resume.php">CV/Resume</a>
+        <a href="space.php">Space</a>
       <a href="about.php">About</a>
       <?php
         if (isset($_SESSION["dragon_user"])) {
