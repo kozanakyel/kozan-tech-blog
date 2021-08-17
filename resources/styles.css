@@ -97,6 +97,34 @@ a:hover{
   }
 }
 
+@media only screen and (max-width:300px){
+  #header-brand{
+    display:none;
+  }
+
+  #hamburger{
+    display: block;
+    cursor:pointer;
+  }
+  .menu{
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+  .menu a{
+    clear: right;
+    display: block;
+    border-bottom: 1px solid #EAEAEB;
+    margin: 0;
+    position: relative;
+  }
+  #toggle:checked + .menu{
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+
+
 /**Footer */
 .footer{
   position: relative;
@@ -269,7 +297,8 @@ input[type=text], input[type=email],input[type=password], textarea {
   border:none; /* Some padding */
   border-bottom: 1px solid #ccc; /* Gray border */
   border-radius: 4px; /* Rounded borders */
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
   margin-top: 6px; /* Add a top margin */
   margin-bottom: 16px; /* Bottom margin */
   resize: vertical;

@@ -14,7 +14,9 @@
 
   <div class="main-body">
     <div class="categories">
+      <canvas id="canvas" width="50" height="50"></canvas>
       <form class="form-category" action="index.php" method="post">
+
         <?php foreach ($cat_array as $cat) { ?>
           <input type="submit" name="cat" value="<?php echo ucfirst($cat); ?>" />
       <?php } ?>

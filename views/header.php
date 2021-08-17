@@ -18,9 +18,10 @@ include 'conn.php';
   <div class="nav">
     <div class="brand">
       <a id="header-brand" href="index.php">KOZANAKYEL</a>
-
       <a href="goat_phoneix.php"><i style="background:black;" class="fas fa-dragon fa-2x"></i></a>
+
     </div>
+
     <label id="hamburger" for="toggle">  &#9776; </label>
     <input type="checkbox" id="toggle"/>
     <div class="menu">
