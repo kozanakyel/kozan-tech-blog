@@ -53,10 +53,6 @@ $('.link-page').on('click', function(){
   page = $(this).val()
   pagination(listItems, page, rows)
 });
-
-
-
-
 /*
 function chosenPage(pageNo){
   let idNo = "no_" + pageNo;
@@ -106,3 +102,7 @@ if (linkPageCount.length === 0) {
   }
 }
 */
+
+$(document).ready(function(){
+
+});

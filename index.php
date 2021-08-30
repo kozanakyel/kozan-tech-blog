@@ -52,7 +52,7 @@
                 <p><?php echo $blg["short_desc"] ?></p>
                 <input type="hidden" name="blog_id" value="<?php echo $blg["id"] ?>">
                 <input type="submit" name="go_blog" value="Read More" />
-                <p class="p-card"><br /></p>
+                <p class="p-card">author: <?php echo $blg["author"] ?><br /></p>
               </div>
             </div>
           </form>

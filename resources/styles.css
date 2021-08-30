@@ -95,6 +95,8 @@ a:hover{
     display: block;
     margin-bottom: 10px;
   }
+
+  *{font-size: 13px;}
 }
 
 @media only screen and (max-width:300px){
@@ -122,6 +124,7 @@ a:hover{
     display: block;
     margin-bottom: 10px;
   }
+  *{font-size: 11px;}
 }
 
 
@@ -287,7 +290,8 @@ margin-bottom: 5px;
 .contact {
   border-radius: 5px;
   padding: 20px;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   padding-left: 45px;
 }
 
@@ -303,6 +307,16 @@ input[type=text], input[type=email],input[type=password], textarea {
   margin-bottom: 16px; /* Bottom margin */
   resize: vertical;
   color: white;
+}
+
+@media only screen and (max-width:400px){
+  .container-card{
+    width: 150px;
+  }
+
+  .h1-card{
+    font-size: 16px;
+  }
 }
 
 /**blog page*/
